@@ -5,7 +5,7 @@
 
 
 /* Função utilizada dentro do MergeSort para juntar os vetores ordenando seus valores */
-void merge(int vec[], int inf, int m, int sup, int crescente);
+void merge(int vec[], int inf, int m, int sup, int crescente, int n1, int n2);
 
 
 

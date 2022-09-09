@@ -2,11 +2,9 @@
 
 
 /* Une dois vetores, organizando-os */
-void merge(int vec[], int inf, int m, int sup, int crescente){
+void merge(int vec[], int inf, int m, int sup, int crescente, int n1, int n2){
 
     int i, j, k;
-    int n1 = m - inf + 1;
-    int n2 = sup - m;
     int sinal = crescente? 1: -1;
 
   
@@ -65,13 +63,15 @@ void mergeSort(int vec[], int inf, int sup, int crescente){
         
         /* O mesmo que (sup + inf)/2 mas evita overflow para números muito grandes */
         int m = inf + (sup - inf) / 2;
+        const int n1 = m - inf + 1;
+        const int n2 = sup - m;
         
 
         /* Divide a Matriz em duas partes e chama a função novamente recursivamente */
         mergeSort(vec, inf, m, crescente);
         mergeSort(vec, m + 1, sup, crescente);
   
-        merge(vec, inf, m, sup, crescente);
+        merge(vec, inf, m, sup, crescente, n1, n2);
 
     }
 
