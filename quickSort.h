@@ -6,11 +6,11 @@
 
 
 /* Recebe o index do item do topo e da base, junto com o vetor e com o booleano crescente */
-void quickSort(int vec[], int inf, int sup, int crescente);
+void quickSort(int* vec, int inf, int sup);
 
 
 /* Divide as partições do sort de acordo com o pivô, sendo ele nesse caso o número mais à direita */
-int partition(int* vec, int inf, int sup, int crescente);
+int partition(int* vec, int inf, int sup);
 
 
 /* Troca a posição de dois números */

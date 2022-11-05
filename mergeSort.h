@@ -5,10 +5,10 @@
 
 
 /* Função utilizada dentro do MergeSort para juntar os vetores ordenando seus valores */
-void merge(int vec[], int inf, int m, int sup, int crescente, int n1, int n2);
+static void merge(int* vec, int inf, int m, int sup, int n1, int n2);
 
 
 
 
-/* Recebe o index do item do topo e da base, junto com o vetor e com o booleano crescente */
-void mergeSort(int vec[], int inf, int sup, int crescente);
+/* Recebe o index do item do topo e da base, junto com o vetor */
+void mergeSort(int* vec, int inf, int sup);

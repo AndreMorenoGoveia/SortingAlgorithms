@@ -2,10 +2,9 @@
 
 
 /* Une dois vetores, organizando-os */
-void merge(int vec[], int inf, int m, int sup, int crescente, int n1, int n2){
+static void merge(int* vec, int inf, int m, int sup, int n1, int n2){
 
     int i, j, k;
-    int sinal = crescente? 1: -1;
 
   
     /* Vetores auxiliares */
@@ -23,7 +22,8 @@ void merge(int vec[], int inf, int m, int sup, int crescente, int n1, int n2){
     k = inf; 
     while(i < n1 && j < n2){
 
-        if(E[i]*(sinal) <= D[j]*(sinal)){
+        /* Altere para > caso queira ordenado em ordem decresente */
+        if(E[i] < D[j]){
 
             vec[k] = E[i];
             i++;
@@ -57,7 +57,7 @@ void merge(int vec[], int inf, int m, int sup, int crescente, int n1, int n2){
 
 
 
-void mergeSort(int vec[], int inf, int sup, int crescente){
+void mergeSort(int* vec, int inf, int sup){
 
     if(inf < sup){
         
@@ -68,10 +68,10 @@ void mergeSort(int vec[], int inf, int sup, int crescente){
         
 
         /* Divide a Matriz em duas partes e chama a função novamente recursivamente */
-        mergeSort(vec, inf, m, crescente);
-        mergeSort(vec, m + 1, sup, crescente);
+        mergeSort(vec, inf, m);
+        mergeSort(vec, m + 1, sup);
   
-        merge(vec, inf, m, sup, crescente, n1, n2);
+        merge(vec, inf, m, sup, n1, n2);
 
     }
 
